@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyu81ue8u3rrm"]
+
+[ext_resource type="Script" path="res://rotating_cylinder.gd" id="1_xngjr"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_88uyu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2g6jd"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_xngjr")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
+mesh = SubResource("CylinderMesh_88uyu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+shape = SubResource("CylinderShape3D_2g6jd")

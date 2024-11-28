@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyu81ue8u3rrm"]
+
+[ext_resource type="Script" path="res://rotating_cylinder.gd" id="1_xngjr"]
+[ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="2_a4act"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qoo8x"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("2_a4act")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_88uyu"]
+material = SubResource("StandardMaterial3D_qoo8x")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2g6jd"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+script = ExtResource("1_xngjr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
+mesh = SubResource("CylinderMesh_88uyu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+shape = SubResource("CylinderShape3D_2g6jd")
