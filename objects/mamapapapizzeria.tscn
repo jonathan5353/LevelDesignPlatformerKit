@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://t6xd3b8ostkw"]
+
+[ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://objects/platform_medium.tscn" id="1_76roc"]
+[ext_resource type="PackedScene" uid="uid://dpo3dr26b06w3" path="res://objects/spike_block_wide.tscn" id="2_qfitf"]
+[ext_resource type="PackedScene" uid="uid://dppaaoqj1t6n5" path="res://objects/spike_block.tscn" id="3_nyvqt"]
+
+[node name="mamapapapizzeria" type="Node3D"]
+
+[node name="platform-medium" parent="." instance=ExtResource("1_76roc")]
+transform = Transform3D(0.196445, 0, 0.0438784, 0, 0.201286, 0, -0.0438784, 0, 0.196445, 0.126934, -0.538984, 0.463406)
+
+[node name="spike-block-wide" parent="." instance=ExtResource("2_qfitf")]
+transform = Transform3D(-0.0238519, 0, -0.14985, 0, 0.151737, 0, 0.14985, 0, -0.0238519, -0.519761, -0.0144006, -0.0622284)
+
+[node name="platform-medium2" parent="." instance=ExtResource("1_76roc")]
+transform = Transform3D(-0.0230717, 0, 0.150458, 0, 0.152217, 0, -0.150458, 0, -0.0230717, 0.583815, -0.76112, -0.0930804)
+
+[node name="spike-block" parent="." instance=ExtResource("3_nyvqt")]
+transform = Transform3D(0.199075, 0.00444858, 0.0186899, -0.0187679, 0.00343553, 0.199088, 0.00410724, -0.199921, 0.0038371, -0.0643096, 0.0317913, -0.448048)
+
+[node name="spike-block-wide2" parent="." instance=ExtResource("2_qfitf")]
+transform = Transform3D(-0.0238519, 0, -0.14985, 0, 0.151737, 0, 0.14985, 0, -0.0238519, -0.519761, 0.385166, -0.0622284)
+
+[node name="spike-block-wide3" parent="." instance=ExtResource("2_qfitf")]
+transform = Transform3D(0.0801323, 5.7433e-05, -0.142538, -0.0051422, 0.163413, -0.002825, 0.142446, 0.00586681, 0.0800825, -0.438196, -0.25248, 0.383159)
+
+[node name="platform-medium3" parent="." instance=ExtResource("1_76roc")]
+transform = Transform3D(-0.120297, 0, 0.00305556, 0, 0.120336, 0, -0.00305555, 0, -0.120297, 0.55634, -0.062236, -0.0205599)

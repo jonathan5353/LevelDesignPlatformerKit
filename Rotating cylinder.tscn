@@ -1,25 +1,32 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyu81ue8u3rrm"]
 
 [ext_resource type="Script" path="res://rotating_cylinder.gd" id="1_xngjr"]
-[ext_resource type="Texture2D" uid="uid://0odt7cvj574e" path="res://models/core_models/Textures/colormap.png" id="2_a4act"]
+[ext_resource type="PackedScene" uid="uid://bdm3quh21j64k" path="res://objects/platform_large.tscn" id="2_an4ba"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qoo8x"]
 resource_name = "colormap"
 cull_mode = 2
-albedo_texture = ExtResource("2_a4act")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_88uyu"]
 material = SubResource("StandardMaterial3D_qoo8x")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2g6jd"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Spinning_cilinder" type="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+[node name="Spinning_cilinder" type="AnimatableBody3D" parent="."]
+sync_to_physics = false
 script = ExtResource("1_xngjr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spinning_cilinder"]
 mesh = SubResource("CylinderMesh_88uyu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+[node name="platform-large" parent="Spinning_cilinder/MeshInstance3D" instance=ExtResource("2_an4ba")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.75, -0.25, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spinning_cilinder"]
 shape = SubResource("CylinderShape3D_2g6jd")
+
+[node name="platform-large" parent="Spinning_cilinder" instance=ExtResource("2_an4ba")]
+transform = Transform3D(0.225, 0, 0, 0, 0.225, 0, 0, 0, 0.09, -1.0625, -0.3125, 0)
