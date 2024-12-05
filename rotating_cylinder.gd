@@ -1,9 +1,10 @@
 extends Node3D
-@onready var spinnng_cylinder: Node3D = $"."
+@onready var spinnemama: Node3D = $"."
 
-@export var ROTATIONSPEED = 1
+@export var ROTATIONSPEED = 0.5
 @onready var collision_shape_3d: CollisionShape3D = $AnimatableBody3D/CollisionShape3D
-@onready var spinning_cilinder: AnimatableBody3D = $"."
+
+
 
 
 
@@ -16,4 +17,4 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 
-	spinning_cilinder.rotation.y += delta * ROTATIONSPEED
+	spinnemama.rotation.y += delta * ROTATIONSPEED
