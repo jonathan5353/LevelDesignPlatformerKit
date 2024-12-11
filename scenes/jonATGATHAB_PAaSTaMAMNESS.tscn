@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cyldbe06rh70p"]
+[gd_scene load_steps=37 format=3 uid="uid://cyldbe06rh70p"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_ef805"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_fthbr"]
@@ -26,7 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://bpharv43ulngb" path="res://objects/platform_moving.tscn" id="23_65x0m"]
 [ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://objects/coin.tscn" id="25_8a56r"]
 [ext_resource type="PackedScene" uid="uid://b02f0iwv3yuhc" path="res://spinning_cilinder.tscn" id="25_ch7gf"]
-[ext_resource type="PackedScene" uid="uid://c5vgh1v6juur0" path="res://models/core_models/platform-medium.glb" id="27_3wna8"]
+[ext_resource type="PackedScene" uid="uid://d21e0otc3flti" path="res://hole.tscn" id="27_31u68"]
+[ext_resource type="PackedScene" uid="uid://0v6t454aaexr" path="res://objects/door.tscn" id="28_4y302"]
+[ext_resource type="PackedScene" uid="uid://dbr3dh46cbskt" path="res://objects/wall.tscn" id="29_2c41c"]
+[ext_resource type="PackedScene" uid="uid://dhxok27jxvik8" path="res://objects/flag.tscn" id="30_hrcwq"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -73,7 +76,7 @@ environment = ExtResource("1_ef805")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_fthbr")]
-transform = Transform3D(0.112076, 0, -0.9937, 0, 1, 0, 0.9937, 0, 0.112076, 11.382, 36.898, 5.87948)
+transform = Transform3D(0.112076, 0, -0.9937, 0, 1, 0, 0.9937, 0, 0.112076, -0.618, 4.898, -3.12052)
 view = NodePath("../View")
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
@@ -253,7 +256,7 @@ transform = Transform3D(1.82267, 0, 0, 0, 1.82267, 0, 0, 0, 1.82267, 0, 0, 0)
 transform = Transform3D(0.548646, 0, 0, 0, 0.548646, 0, 0, 0, 0.548646, -0.111811, 6.54777, 11.2811)
 
 [node name="spike-block-wide4" parent="SPINNEMAMA/platform-large" instance=ExtResource("16_fo3w2")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 23.2038, 19.0656, -24.5617)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 23.2038, 20.8697, -23.1433)
 
 [node name="spike-block-wide2" parent="SPINNEMAMA/platform-large/spike-block-wide4" instance=ExtResource("16_fo3w2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
@@ -556,28 +559,93 @@ transform = Transform3D(0.884858, 0, -0.465862, 0, 1, 0, 0.465862, 0, 0.884858, 
 transform = Transform3D(0.88357, 0, -0.4683, 0, 1, 0, 0.4683, 0, 0.88357, 12.0095, 34.7638, 6.27292)
 
 [node name="platform-large6" parent="." instance=ExtResource("14_wpe6c")]
-transform = Transform3D(0.808206, 0, 0.5889, 0, 1, 0, -0.5889, 0, 0.808206, 13.8558, 33.7025, 15.3766)
+transform = Transform3D(0.808206, 0, 0.5889, 0, 1, 0, -0.5889, 0, 0.808206, 13.8558, 34.0257, 15.3766)
 
 [node name="platform-large7" parent="." instance=ExtResource("14_wpe6c")]
-transform = Transform3D(0.937069, 0, 0.349145, 0, 1, 0, -0.349145, 0, 0.937069, 7.28077, 32.4009, 19.5964)
+transform = Transform3D(0.937069, 0, 0.349145, 0, 1, 0, -0.349145, 0, 0.937069, 7.28077, 34.2375, 19.5964)
 
 [node name="platform-falling6" parent="." instance=ExtResource("21_mp1uf")]
-transform = Transform3D(0.953444, 0, 0.301571, 0, 1, 0, -0.301571, 0, 0.953444, 5.19713, 32.5696, 14.2748)
+transform = Transform3D(0.953444, 0, 0.301571, 0, 1, 0, -0.301571, 0, 0.953444, 5.19713, 33.8753, 14.2748)
 
 [node name="coin7" parent="." instance=ExtResource("25_8a56r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.15387, 33.0696, 14.2488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.15387, 34.3753, 14.2488)
 
 [node name="platform-medium3" parent="." instance=ExtResource("15_udh2j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0340356, 32.7061, 21.7219)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.539877, 34.2089, 21.7219)
 
 [node name="platform-medium4" parent="." instance=ExtResource("15_udh2j")]
-transform = Transform3D(0.977187, 0, -0.212382, 0, 1, 0, 0.212382, 0, 0.977187, -5.72537, 29.5313, 21.1694)
+transform = Transform3D(0.977187, 0, -0.212382, 0, 1, 0, 0.212382, 0, 0.977187, -5.72537, 32.19, 21.1694)
 
 [node name="checkpoint8" parent="." instance=ExtResource("17_2g8ng")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4759, 35.7622, 6.36402)
 
-[node name="platform-medium5" parent="." instance=ExtResource("27_3wna8")]
-transform = Transform3D(0.919945, 0, -0.392048, 0, 1, 0, 0.392048, 0, 0.919945, -10.822, 30.9136, 19.3213)
+[node name="platform-medium5" parent="." instance=ExtResource("15_udh2j")]
+transform = Transform3D(0.884508, 0, -0.466526, 0, 1, 0, 0.466526, 0, 0.884508, -10.1773, 33.504, 19.0241)
+
+[node name="platform-medium6" parent="." instance=ExtResource("15_udh2j")]
+transform = Transform3D(0.750872, 0, -0.660447, 0, 1, 0, 0.660447, 0, 0.750872, -14.5569, 33.8552, 16.1008)
+
+[node name="platform-medium7" parent="." instance=ExtResource("15_udh2j")]
+transform = Transform3D(0.77787, 0, -0.628425, 0, 1, 0, 0.628425, 0, 0.77787, -10.1756, 33.8075, 11.1861)
+
+[node name="checkpoint7" parent="." instance=ExtResource("17_2g8ng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9623, 34.2794, 11.7671)
+
+[node name="coin8" parent="." instance=ExtResource("25_8a56r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49127, 34.7869, 10.5413)
+
+[node name="Spinning_cilinder5" parent="." instance=ExtResource("25_ch7gf")]
+transform = Transform3D(-8.74228e-08, -2, -3.4641, 4, -1.74846e-07, 0, -1.51421e-07, -3.4641, 2, -18.7788, 33.3552, 10.0971)
+
+[node name="platform-large8" parent="." instance=ExtResource("14_wpe6c")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -16, 34, 4)
+
+[node name="platform-medium8" parent="." instance=ExtResource("15_udh2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 34, 1)
+
+[node name="platform-medium10" parent="." instance=ExtResource("15_udh2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 33, 1)
+
+[node name="platform-medium11" parent="." instance=ExtResource("15_udh2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, -2)
+
+[node name="platform-medium12" parent="." instance=ExtResource("15_udh2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31, -7)
+
+[node name="Node3D" parent="." instance=ExtResource("27_31u68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 26, -7)
+
+[node name="coin9" parent="." instance=ExtResource("25_8a56r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 29, -7)
+
+[node name="platform-falling7" parent="." instance=ExtResource("21_mp1uf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 34, 1)
+
+[node name="coin10" parent="." instance=ExtResource("25_8a56r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 27, -7)
+
+[node name="coin11" parent="." instance=ExtResource("25_8a56r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 25, -7)
+
+[node name="door" parent="." instance=ExtResource("28_4y302")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, -13)
+look_at_door_when_opens = true
+open_door_with_coins = 11
+
+[node name="wall" parent="." instance=ExtResource("29_2c41c")]
+transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 3.7, -3, 3, -15)
+
+[node name="wall2" parent="." instance=ExtResource("29_2c41c")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 4.2, -1, 3, -15)
+
+[node name="wall3" parent="." instance=ExtResource("29_2c41c")]
+transform = Transform3D(-4.37114e-08, 2.4, 0, -1, -1.04907e-07, 0, 0, 0, 3.9, -3, 5, -15)
+
+[node name="wall4" parent="." instance=ExtResource("29_2c41c")]
+transform = Transform3D(-4.37114e-08, 0, 1.8, 0, 2.5, 0, -1, 0, -7.86805e-08, -2, 3, -17)
+
+[node name="flag" parent="." instance=ExtResource("30_hrcwq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, -16)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
